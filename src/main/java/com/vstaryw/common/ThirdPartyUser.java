@@ -20,6 +20,11 @@ public class ThirdPartyUser implements Serializable {
 
     private Integer clientType;
 
+    /**
+     * twitter 获取到的tokenSecret
+     */
+    private String accessTokenSecret;
+
     public String getOpenId() {
         return openId;
     }
@@ -58,5 +63,13 @@ public class ThirdPartyUser implements Serializable {
 
     public void setClientType(Integer clientType) {
         this.clientType = clientType;
+    }
+
+    public String getAccessTokenSecret() {
+        return accessTokenSecret;
+    }
+
+    public void setAccessTokenSecret(String accessTokenSecret) {
+        this.accessTokenSecret = accessTokenSecret;
     }
 }

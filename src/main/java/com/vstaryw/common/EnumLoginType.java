@@ -6,7 +6,10 @@ package com.vstaryw.common;
 public enum EnumLoginType {
     QQ(1,"QQ登录"),
     WECHAT(2,"微信登录"),
-    SINA_WEIBO(3,"新浪微博登录");
+    SINA_WEIBO(3,"新浪微博登录"),
+    FACEBOOK(4,"facebook登录"),
+    TWITTER(5,"twitter登录"),
+    GOOGLE(6,"google登录");
     private EnumLoginType(){
 
     }

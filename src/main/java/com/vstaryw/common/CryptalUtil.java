@@ -1,8 +1,12 @@
 package com.vstaryw.common;
 
+import com.google.common.hash.Hashing;
+
 import javax.crypto.Mac;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
+import java.nio.charset.Charset;
+import java.util.Base64;
 
 /**
  * 加密
@@ -22,5 +26,14 @@ public class CryptalUtil {
         mac.init(secretKey);
         byte[] text = encryptText.getBytes(ENCODING);
         return mac.doFinal(text);
+    }
+
+    public static String hash_hmac(String encryptText,String encryptKey) throws Exception{
+        byte[] bytes = HmacSHA1Encrypt(encryptText,encryptKey);
+        return Base64.getEncoder().encodeToString(bytes);
+    }
+
+    public static String md5(String str){
+        return Hashing.md5().hashString(str, Charset.forName("UTF-8")).toString().toLowerCase();
     }
 }
